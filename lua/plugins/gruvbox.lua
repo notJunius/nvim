@@ -3,10 +3,10 @@ return {
 	name = "catppuccin",
 	config = function()
     require("catppuccin").setup({
-      flavour = "auto", -- latte, frappe, macchiato, mocha
+      flavour = "frappe", -- latte, frappe, macchiato, mocha
       background = { -- :h background
           light = "latte",
-          dark = "mocha",
+          dark = "frappe",
       },
       transparent_background = true, -- disables setting the background color.
       show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
@@ -52,6 +52,6 @@ return {
   })
 
   -- setup must be called before loading
-  vim.cmd.colorscheme "catppuccin-mocha"
+  vim.cmd.colorscheme "catppuccin"
   end
 }
