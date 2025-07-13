@@ -15,6 +15,7 @@ return {
 					"ols",
 					"gopls",
 					"zls",
+          "ts_ls"
 				},
 			})
 		end,
@@ -26,6 +27,9 @@ return {
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.pyright.setup({

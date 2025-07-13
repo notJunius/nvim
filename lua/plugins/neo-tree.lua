@@ -9,7 +9,7 @@ return {
     --{"3rd/image.nvim", opts = {}},
   },
   config = function()
-    vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal right<CR>')
+    vim.keymap.set('n', '<leader>n', ':Neotree filesystem reveal left<CR>')
     vim.keymap.set('n', '<leader>N', ':Neotree filesystem close<CR>')
   end
 }
