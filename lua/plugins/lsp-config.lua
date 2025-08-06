@@ -15,7 +15,8 @@ return {
 					"ols",
 					"gopls",
 					"zls",
-          "ts_ls"
+          "ts_ls",
+          "clangd"
 				},
 			})
 		end,
@@ -27,6 +28,9 @@ return {
 
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.clangd.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.ts_ls.setup({
