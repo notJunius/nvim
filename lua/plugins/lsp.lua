@@ -21,6 +21,12 @@ return {
 			lspconfig.lua_ls.setup {
 				capabilities = capabilities
 			}
+			lspconfig.pyright.setup {
+				capabilities = capabilities
+			}
+			lspconfig.zls.setup {
+				capabilities = capabilities
+			}
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
