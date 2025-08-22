@@ -13,7 +13,7 @@ vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", "<cmd>:.lua<CR>")
 vim.keymap.set("v", "<space>x", "<cmd>:lua<CR>")
 vim.keymap.set("n", "<space>w", "<cmd>:w<CR>")
-vim.keymap.set("n", "<space>q", "<cmd>:q<CR>")
+vim.keymap.set("n", "<space>q", "<cmd>:q!<CR>")
 
 vim.keymap.set("n", "-", "<cmd>Oil<CR>")
 
