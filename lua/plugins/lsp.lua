@@ -1,8 +1,21 @@
 return {
 	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = { "lua_ls", "pyright", "zls", "ts_ls", "ols" }
+			})
+		end
+	},
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"saghen/blink.cmp",
 			{
 				"folke/lazydev.nvim",
 				ft = "lua", -- only load on lua files
@@ -16,24 +29,12 @@ return {
 			},
 		},
 		config = function()
-			local capabilities = require('blink.cmp').get_lsp_capabilities()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup {
-				capabilities = capabilities
-			}
-			lspconfig.pyright.setup {
-				capabilities = capabilities
-			}
-			lspconfig.zls.setup {
-				capabilities = capabilities
-			}
-			lspconfig.ols.setup {
-				capabilities = capabilities
-			}
-			lspconfig.ts_ls.setup {
-				capabilities = capabilities
-			}
-
+			lspconfig.lua_ls.setup({})
+			lspconfig.pyright.setup({})
+			lspconfig.zls.setup({})
+			lspconfig.ols.setup({})
+			lspconfig.ts_ls.setup({})
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
 					local client = vim.lsp.get_client_by_id(args.data.client_id)
