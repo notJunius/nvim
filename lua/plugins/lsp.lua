@@ -17,6 +17,7 @@ return {
 			require("lspconfig").lua_ls.setup { capabilites = capabilities }
 			require("lspconfig").pyright.setup { capabilites = capabilities }
 			require("lspconfig").ols.setup { capabilites = capabilities }
+			require("lspconfig").nil_ls.setup { capabilites = capabilities }
 
 			vim.api.nvim_create_autocmd('LspAttach', {
 				callback = function(args)
