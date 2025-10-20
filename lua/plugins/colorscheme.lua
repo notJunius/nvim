@@ -1,4 +1,5 @@
-return {
+return
+{
 	"neanias/everforest-nvim",
 	version = false,
 	lazy = false,
@@ -7,8 +8,7 @@ return {
 	config = function()
 		require("everforest").setup({
 			background = "medium",
-			transparent_background_level = 1,
 		})
-		vim.cmd("colorscheme everforest")
-	end,
+		vim.cmd.colorscheme "everforest"
+	end
 }
