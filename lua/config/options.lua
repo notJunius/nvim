@@ -10,7 +10,12 @@ set.cursorline = true
 set.scrolloff = 10
 set.updatetime = 50
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gD", "<cmd>tab split | lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"gD",
+	"<cmd>tab split | lua vim.lsp.buf.definition()<CR>",
+	{ noremap = true, silent = true }
+)
 set.wrap = false
 set.signcolumn = "yes:1"
 
