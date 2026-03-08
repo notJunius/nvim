@@ -16,6 +16,10 @@ return {
 		formatters_by_ft = {
 			odin = { "odinfmt" },
 			lua = { "stylua" },
+			cpp = { "clang-format" },
+			javascript = { "prettierd", "prettier" },
+			html = { "prettierd", "prettier" },
+			css = { "prettierd", "prettier" },
 		},
 	},
 }

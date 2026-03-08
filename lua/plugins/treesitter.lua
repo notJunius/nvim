@@ -4,8 +4,24 @@ return {
 		build = ":TSUpdate",
 		branch = "master",
 		config = function()
-			require 'nvim-treesitter.configs'.setup {
-				ensure_installed = { "python", "odin", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+			require("nvim-treesitter.configs").setup({
+				ensure_installed = {
+					"python",
+					"odin",
+					"c",
+					"lua",
+					"vim",
+					"vimdoc",
+					"query",
+					"markdown",
+					"markdown_inline",
+					"cpp",
+					"javascript",
+					"html",
+                    "gdscript",
+                    "godot_resource",
+                    "gdshader",
+				},
 				auto_install = false,
 				highlight = {
 					enable = true,
@@ -18,7 +34,7 @@ return {
 					end,
 					additional_vim_regex_highlighting = false,
 				},
-			}
+			})
 		end,
-	}
+	},
 }

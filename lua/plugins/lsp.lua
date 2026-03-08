@@ -2,7 +2,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			'saghen/blink.cmp',
+			"saghen/blink.cmp",
 			{
 				"folke/lazydev.nvim",
 				opts = {
@@ -13,29 +13,50 @@ return {
 			},
 		},
 		config = function()
-			local capabilities = require('blink.cmp').get_lsp_capabilities()
-			vim.lsp.enable('lua_ls')
-			vim.lsp.config('lua_ls', {
-				capabilities = capabilities
+				local capabilities = require("blink.cmp").get_lsp_capabilities()
+			vim.lsp.enable("lua_ls")
+			vim.lsp.config("lua_ls", {
+				capabilities = capabilities,
 			})
-			vim.lsp.enable('pyright')
-			vim.lsp.config('pyright', {
-				capabilities = capabilities
+			vim.lsp.enable("pyright")
+			vim.lsp.config("pyright", {
+				capabilities = capabilities,
 			})
-			vim.lsp.enable('ols')
-			vim.lsp.config('ols', {
-				capabilities = capabilities
+			vim.lsp.enable("ols")
+			vim.lsp.config("ols", {
+				capabilities = capabilities,
 			})
-			vim.lsp.enable('nil_ls')
-			vim.lsp.config('nil_ls', {
-				capabilities = capabilities
+			vim.lsp.enable("nil_ls")
+			vim.lsp.config("nil_ls", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("clangd")
+			vim.lsp.config("clangd", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("tsserver")
+			vim.lsp.config("tsserver", {
+				capabilities = capabilities,
+				cmd = { "typescript-language-server", "--stdio" },
+			})
+			vim.lsp.enable("html")
+			vim.lsp.config("html", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("cssls")
+			vim.lsp.config("cssls", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("gdscript")
+			vim.lsp.config("gdscript", {
+				capabilities = capabilities,
 			})
 			vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format({ bufnr = args.buf })
-  end,
-})
+				pattern = "*",
+				callback = function(args)
+					require("conform").format({ bufnr = args.buf })
+				end,
+			})
 		end,
-	}
+	},
 }

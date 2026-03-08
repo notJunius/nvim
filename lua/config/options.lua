@@ -19,6 +19,7 @@ vim.api.nvim_set_keymap(
 set.wrap = false
 set.signcolumn = "yes:1"
 
+
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
