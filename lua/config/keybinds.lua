@@ -15,7 +15,7 @@ local function run_current_file()
 	local output_name = vim.fn.expand("%:r") --removes .filetype at end of file name
 
 	if file_type == "cpp" then
-		vim.cmd("split | term g++ " .. file_name .. " -o " .. output_name .. " && ./" .. output_name)
+		vim.cmd("split | term make && ./" .. output_name)
 	elseif file_type == "javascript" then
 		vim.cmd("split | term echo 'live-server for webhosting' && node " .. file_name)
 	elseif file_type == "odin" then
