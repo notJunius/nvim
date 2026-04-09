@@ -15,6 +15,7 @@ return {
 		-- and instruct conform to use odinfmt.
 		formatters_by_ft = {
 			odin = { "odinfmt" },
+			zig = { "zigfmt" },
 			lua = { "stylua" },
 			cpp = { "clang-format" },
 			javascript = { "prettierd", "prettier" },

@@ -13,7 +13,7 @@ return {
 			},
 		},
 		config = function()
-				local capabilities = require("blink.cmp").get_lsp_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 			vim.lsp.enable("lua_ls")
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
@@ -47,8 +47,16 @@ return {
 			vim.lsp.config("cssls", {
 				capabilities = capabilities,
 			})
+			vim.lsp.enable("p8")
+			vim.lsp.config("p8", {
+				capabilities = capabilities,
+			})
 			vim.lsp.enable("gdscript")
 			vim.lsp.config("gdscript", {
+				capabilities = capabilities,
+			})
+			vim.lsp.enable("zls")
+			vim.lsp.config("zls", {
 				capabilities = capabilities,
 			})
 			vim.api.nvim_create_autocmd("BufWritePre", {
