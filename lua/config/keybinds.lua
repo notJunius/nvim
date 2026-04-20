@@ -23,7 +23,7 @@ local function run_current_file()
 	elseif file_type == "python" then
 		vim.cmd("split | term uv run " .. file_name)
 	elseif file_type == "zig" then
-		vim.cmd("zig build run")
+		vim.cmd("split | term zig build")
 	else
 		print("No run command defined for filetype: " .. file_type)
 	end
