@@ -3,7 +3,19 @@ return {
   'stevearc/oil.nvim',
   ---@module 'oil'
   ---@type oil.SetupOpts
-  opts = {},
+  opts = {
+		view_options = {
+			is_hidden_file = function(name, bufnr)
+				-- hide specific extensions like .uid
+				local match = name:match("%.(%w+)$")
+				if match == "uid" then
+					return true
+				end
+				return vim.startswith(name, ".")
+			end
+		},
+
+	},
   -- Optional dependencies
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
