@@ -1,7 +1,8 @@
 local set = vim.opt
+set.guicursor = "a:block"
 set.shiftwidth = 2
 set.tabstop = 2
-set.clipboard = "unnamedplus"
+set.clipboard = 'unnamedplus'
 set.number = true
 set.relativenumber = true
 set.pumheight = 10
