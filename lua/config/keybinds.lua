@@ -14,7 +14,7 @@ vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 local function run_current_file()
 	local file_type = vim.bo.filetype
 	local file_name = vim.fn.expand("%")
-	vim.cmd(":cd %:h")
+	--vim.cmd(":cd %:h")
 
 	if file_type == "cpp" then
 		vim.cmd("split | term make && ./main")
